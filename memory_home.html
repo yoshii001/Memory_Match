@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="Screen">
+        <div class="container">
+            <h1>Memory Match</h1>
+            <div class="level-select">
+                <h2>Select Level</h2>
+                <div class="level-buttons">
+                    <button class="level-btn" data-level="1">Level 1</button>
+                    <button class="level-btn locked" data-level="2">Level 2 🔒</button>
+                    <button class="level-btn locked" data-level="3">Level 3 🔒</button>
+                    <button class="level-btn locked" data-level="4">Level 4 🔒</button>
+                </div>
+            </div>
+            <div class="best-score">
+                <img src="images/trophy.png" alt="Trophy">
+                <span>Best Score: <span id="bestScore">0</span></span>
+            </div>
+            <p class="instructions">Match pairs of identical items to score points!</p>
+        </div>
+    </div>
+
+    <!-- Game Board Screen -->
+    <div id="gameScreen" class="screen hidden">
+        <div class="container">
+            <div class="game-header">
+                <div class="level-info">
+                    <span class="level-label">Level</span>
+                    <span id="currentLevel">1</span>
+                </div>
+                <div class="game-stats">
+                    <div class="score">
+                        <img src="images/speedometer.png" alt="Score">
+                        <span id="currentScore">0</span>
+                    </div>
+                    <div class="timer">
+                        <img src="images/timer.png" alt="Timer">
+                        <span id="timeLeft">60</span>s
+                    </div>
+                    <div class="moves">
+                        <img src="images/footstep.png" alt="Moves">
+                        <span id="moves">0</span>
+                    </div>
+                </div>
+            </div>
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+    </div>
+
+    <!-- Level Complete Screen -->
+    <div id="levelCompleteScreen" class="screen hidden">
+        <div class="container">
+            <h2>Level Complete!</h2>
+            <div class="level-stats">
+                <div class="stat">
+                    <img src="images/speedometer.png" alt="Score">
+                    <span>Score: <span id="levelScore">0</span></span>
+                </div>
+                <div class="stat">
+                    <img src="im" alt="Stars">
+                    <span>Stars: <span id="levelStars">0</span></span>
+                </div>
+            </div>
+            <div class="level-buttons">
+                <button id="nextLevelBtn" class="btn-primary">Next Level</button>
+                <button id="replayLevelBtn" class="btn-secondary">Replay Level</button>
+                <button id="levelHomeBtn" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen hidden">
+        <div class="container">
+            <h2>Game Over!</h2>
+            <div class="final-score">
+                <img src="images/coin.png" alt="Score">
+                <span>Score: <span id="finalScore">0</span></span>
+            </div>
+            <div class="best-score">
+                <img src="images/trophy.png" alt="Trophy">
+                <span>Best: <span id="finalBestScore">0</span></span>
+            </div>
+            <div class="game-over-buttons">
+                <button id="tryAgainButton" class="btn-primary">
+                    <img src="images/tryagain.png" alt="Try Again">
+                    Try Again
+                </button>
+                <button id="restartButton" class="btn-primary">
+                    <img src="images/refresh.png" alt="Restart">
+                    Restart Level
+                </button>
+                <button id="homeButton" class="btn-secondary">
+                    <img src="images/home.png" alt="Home">
+                    Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

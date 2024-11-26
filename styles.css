@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    background: url(images/back.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-size: cover;
+}
+/* Body for Loading Page */
+body.loading-page {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Background Video Styling */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the background */
+    z-index: -1; /* Sends the video to the background */
+}
+
+/* Centered Content Styling */
+.centered-content {
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect */
+}
+
+/* Title Styling */
+.title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: textZoom 2s ease-in-out; /* Zoom-in effect for title */
+}
+
+/* Get Started Button Styling */
+.get-started-btn {
+    background-color: #fcd34d;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: #fbbf24;
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textZoom {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+.screen {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 4px solid #fcd34d;
+    width: auto;
+    max-width: 680px;
+}
+
+.container {
+    text-align: center;
+}
+.Screen{
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 4px solid #fcd34d;
+    width: 100%;
+    max-width: 680px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Welcome Screen */
+h1 {
+    font-size: 3.5rem;
+    color: #e2bc11;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.level-select {
+    margin-bottom: 2rem;
+}
+
+.level-select h2 {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.level-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.level-btn {
+    background: linear-gradient(135deg, #4ade80, #16a34a);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-btn:hover:not(.locked) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.level-btn.locked {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.best-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    color: #4b5563;
+}
+
+.best-score img {
+    width: 24px;
+    height: 24px;
+    color: #f59e0b;
+}
+
+.btn-primary, .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4ade80, #16a34a);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+    transform: translateY(-2px);
+}
+
+/* Game Board */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.level-info {
+    background: #c731db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: bold;
+}
+
+.game-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.score, .timer, .moves {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.game-board.level-1 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.game-board.level-2 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.game-board.level-3 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.game-board.level-4 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.card {
+    aspect-ratio: 1;
+    background: #fdfcfc;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    width: 80px;
+    height: 80px;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+}
+
+.card-front {
+    background: #4d0146;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    font-size: 3rem;
+}
+
+.card.matched {
+    opacity: 0.5;
+}
+
+
+
+/* Level Complete Screen */
+.level-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Game Over Screen */
+.game-over-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.final-score, .best-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+}
